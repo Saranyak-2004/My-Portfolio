@@ -1,4 +1,4 @@
-# My-Portfolio Website
+# My-Portfolio Website=>https://saranya2025.netlify.app/
 
 Welcome to my personal portfolio website! This site showcases my skills, projects, and experience. Feel free to explore and learn more about what I do.
 
@@ -55,8 +55,9 @@ If you'd like to run this portfolio website locally, you can follow these steps:
 
 ## Author
 
-=>Saranya K
-=>Email Address:saranya.k.2025@gmail.com 
+Saranya K
+saranya.k.2025@gmail.com 
+link to my-portfolio=> https://saranya2025.netlify.app/
 
 
 ---
