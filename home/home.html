@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+
+        /* .nav {
+            opacity: 0.25;
+        } */
+
+        .her {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: calc(100vh - 80px);
+        }
+
+        .her-text {
+            max-width: 50%;
+        }
+
+        .her-text h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .her-text h1 span {
+            color: #007bff;
+        }
+
+        .her-text p {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .her-text button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .her-text button:hover {
+            background-color: #0056b3;
+        }
+
+        .her-image {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .her-image .bg-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #007bff;
+            border-radius: 50%;
+            clip-path: circle(70% at 50% 50%);
+        }
+
+        .her-image .profile-pic {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            background-color: #ccc;
+            border-radius: 50%;
+            top: 10%;
+            left: 10%;
+            background: url('profile.jpg') center/cover no-repeat;
+        }
+
+        .contact-info {
+            display: none;
+            text-align: center;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: black;
+            margin-top: 320px; /* Places it below the 300px image */
+        }
+
+        .contact-info.show {
+            display: block;
+        }
+
+        .social-icons {
+            padding: 10px 0;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-icons img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+        footer {
+            width: fit-content;
+            position: relative;
+            bottom: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1199px) {
+            .her {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 15px;
+                min-height: auto;
+            }
+
+            .her-text {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .her-image {
+                margin: 0 auto;
+            }
+
+            .contact-info {
+                margin-top: 270px; /* Adjusted for smaller image size on tablets */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .her {
+                padding: 20px 10px;
+            }
+
+            .her-text h1 {
+                font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+            }
+
+            .her-text p {
+                font-size: clamp(1rem, 3vw, 1.3rem);
+            }
+
+            .her-text button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .her-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .social-icons img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .her {
+                padding: 15px 8px;
+            }
+
+            .her-text h1 {
+                font-size: clamp(1.5rem, 4vw, 2rem);
+            }
+
+            .her-text p {
+                font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            }
+
+            .social-icons img {
+                width: 26px;
+                height: 26px;
+            }
+
+            .contact-info {
+                margin-top: 270px; /* Consistent with tablet size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="nav justify-content-end bg-secondary bg-opacity-25 p-2">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html"><h4>Home</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html"><h4>About</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="skill.html"><h4>Skill</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="work.html"><h4>Works</h4></a>
+            </li>
+        </ul>
+    </header>
+
+    <section class="her">
+        <div class="her-text">
+            <h1>Hi, I'am <span>Saranya Kumar</span></h1>
+            <p>Web and Front-end Designer</p>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/saranya-kumar-"><img src="https://th.bing.com/th/id/OIP.CaFd-W_iPSe8sqP9RbUaTAHaHa?w=184&h=184&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3" alt="LinkedIn"></a>
+                <a href="https://github.com/Saranyak-2004"><img src="https://th.bing.com/th/id/OIP.ex75g4-5QfD5ES2M34-MnwHaHa?w=175&h=180&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3" alt="GitHub"></a>
+                <a href="mailto:saranya.k.2025@gmail.com"><img src="https://th.bing.com/th/id/OIP.cpNLmhSDiJhWWat12KjRIwHaHa?w=174&h=180&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3" alt="Email"></a>
+                <a href="tel:91-8610141296"><img src="https://th.bing.com/th/id/OIP.YRI0A49ekxpCo2luWgYLBAHaHa?w=181&h=181&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3" alt="Phone"></a>
+            </div>
+
+            <br>
+            <button onclick="showContact()">Objective</button>
+            <a href="Saranya K.pdf" download="Saranya_resume.pdf"> <button>Dowload CV</button></a>
+        </div>
+
+        <div class="her-image">
+            <div class="bg-circle"></div>
+            <div class="profile-pic"></div>
+            <p class="contact-info text-black" id="contactInfo">
+                As a recent Electrical Engineer, I am eager to contribute my skills to a dynamic team, solve challenges, and further enhance my expertise on the career.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Portfolio loaded successfully.');
+        });
+
+        function showContact() {
+            const contactInfo = document.getElementById('contactInfo');
+            contactInfo.classList.toggle('show');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <title> About</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+        .about {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .about h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            grid-column: 1 / -1;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0s forwards;
+        }
+
+        .about section {
+            margin-bottom: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+            transition: transform 0.3s ease;
+        }
+
+        .about section:hover {
+            transform: translateY(-5px);
+        }
+
+        .about section:nth-of-type(1) { animation-delay: 0.2s; }
+        .about section:nth-of-type(2) { animation-delay: 0.4s; }
+        .about section:nth-of-type(3) { animation-delay: 0.6s; }
+        .about section:nth-of-type(4) { animation-delay: 0.8s; }
+
+        .about h2 {
+            font-size: 1.8rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .about h2 img{
+             width: 34px;
+            height: 34px;
+            border-radius: 50%;
+        }
+
+        .about ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .about ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            color: black;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about h1 {
+                font-size: 2rem;
+            }
+
+            .about h2 {
+                font-size: 1.5rem;
+            }
+
+            .about section {
+                padding: 15px;
+            }
+
+            .about ul li, .about p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   <header>
+       <ul class="nav justify-content-end bg-secondary bg-opacity-25">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="home.html"><h4>Home</h4></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="about.html"><h4>About</h4></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="skill.html"><h4>Skill</h4></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="work.html"><h4>Works</h4></a>
+  </li>
+</ul>
+</header>
+
+    <section class="about">
+        <h1>About Me</h1>
+
+        <section class="education">
+            <h2><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiAf1EWgkTuuDCVnXT8CMsKpQdhf1dQHKWqA&s"> Education</h2>
+            <ul>
+                <li><b>B.E. Electrical and Electronics Engineering</b>, Knowledge Institute of Technology (2021-2025), CGPA: 8.0 (up to 6th semester)</li>
+                <li><b>HSC - STD XII</b>, St. Mary’s Girls Higher Secondary School (2020-2021), Percentage: 88%</li>
+                <li><b>SSLC - STD X</b>, St. Mary’s Girls Higher Secondary School (2018-2019), Percentage: 89%</li>
+            </ul>
+        </section>
+
+        <section class="achievements">
+            <h2><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToOhOKX4Bh0pKUUenDpI_xNJAOTCAkqahUSg&s"> Achievements</h2>
+            <ul>
+            <li>Won <b>first place</b> in project expo on <b>"E-Vehicle Wireless Charging Power Station"</b> at KSR College of Engineering.</li>
+            <li> Got <b>Archiver Award</b> at Knowledge Institute Of Technology in 2023.</li>
+        </ul>
+        </section>
+
+        <section class="co-curricular">
+            <h2><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBmbX5gE-bhVs8vqUpr-ePD_nGdH1VfEb0Pg&s" > Co-curricular Activities</h2>
+            <ul>
+                <li>Participated in preliminary round of <b>YESIST’12 2023</b> organised by IEEE of Jeppiaar Engineering College.</li>
+                <li>Participated in <b>IBM Hack Challenge 2023</b>.</li>
+                <li>Participated in paper presentation on the topic of<b> “Paper Battery”</b> at Muthayammal College of Engineering.</li>
+            </ul>
+        </section>
+
+        <section class="extra-curricular">
+            <h2><img src="data:image/png;base64,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"> Extra-curricular Activities</h2>
+            <ul>
+                <li>Participated in <b>national level Srinivasa Ramanujan Mathematical Competition </b>conducted by ISTE, Tamil Nadu section.</li>
+                <li>Professional society membership: <b>IEEE Member</b>.</li>
+            </ul>
+        </section>
+    </section>
+</body>
+</html>

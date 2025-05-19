@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+
+        .projects {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .projects h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 8px 16px;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: #333;
+            background-color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .tab:hover {
+            background-color: #e0e0e0;
+        }
+
+        .tab.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .content section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .content section:nth-of-type(1) { animation-delay: 0.2s; }
+        .content section:nth-of-type(2) { animation-delay: 0.4s; }
+        .content section:nth-of-type(3) { animation-delay: 0.6s; }
+        .content section:nth-of-type(4) { animation-delay: 0.8s; }
+
+        .content h2 {
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .content .objective, .content .exposure, .content .description, .content .duration {
+            font-weight: bold;
+            color: #333;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .projects {
+                margin: 20px auto;
+                padding: 0 10px;
+            }
+
+            .tabs {
+                gap: 10px;
+            }
+
+            .tab {
+                padding: 8px 12px;
+                min-width: 100px;
+            }
+
+            .content section {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects h1 {
+                font-size: clamp(1.6rem, 4.5vw, 2rem);
+            }
+
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .tab {
+                width: 100%;
+                max-width: 250px;
+                padding: 10px;
+            }
+
+            .content .row {
+                gap: 15px;
+            }
+
+            .content section {
+                padding: 10px;
+            }
+
+            .content h2 {
+                font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+            }
+
+            .content p {
+                font-size: clamp(0.85rem, 2.2vw, 1rem);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .projects {
+                margin: 15px auto;
+                padding: 0 8px;
+            }
+
+            .projects h1 {
+                font-size: clamp(1.4rem, 4vw, 1.8rem);
+            }
+
+            .tab {
+                max-width: 200px;
+                font-size: clamp(0.9rem, 2.8vw, 1rem);
+            }
+
+            .content .row {
+                gap: 10px;
+            }
+
+            .content section {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="nav justify-content-end bg-secondary bg-opacity-25 p-2">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html"><h4 >Home</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html"><h4>About</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="skill.html"><h4>Skill</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="work.html"><h4>Works</h4></a>
+            </li>
+        </ul>
+    </header>
+    <section class="projects">
+        <h1>Projects & Internships</h1>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showContent('projects-content')">Projects</div>
+            <div class="tab" onclick="showContent('internships-content')">Internships</div>
+        </div>
+
+        <div id="projects-content" class="content active">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <section class="soil-tester">
+                        <h2>Soil Tester</h2>
+                        <p class="objective">Objective:</p>
+                        <p>User-friendly, it empowers farmers for optimal land enhancement, redefining agriculture with scalability and sustainability.</p>
+                        <p class="description">Description:</p>
+                        <p>Soil monitoring device, with Arduino-powered sensors, delivers real-time insights on soil conditions to predict the soil nutrition and suggest fertilizers.</p>
+                    </section>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <section class="ev-charging">
+                        <h2>E-Vehicle Wireless Charging Power Station</h2>
+                        <p class="objective">Objective:</p>
+                        <p>To charge EV through wireless using hybrid & renewable source.</p>
+                        <p class="description">Description:</p>
+                        <p>Revolutionary wireless EV charging using inductive power transfer, reducing costs, utilizing alternative energy, and promoting environmental sustainability with societal benefits.</p>
+                    </section>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <section class="weather-view">
+                        <h2>Weather View: A Real-Time Weather Forecasting Website</h2>
+                        <p class="objective">Objective:</p>
+                        <p>Deliver real-time weather updates and a 3-day forecast through a responsive and user-friendly website.</p>
+                        <p class="description">Description:</p>
+                        <p>Developed a responsive weather website using React, integrated WeatherAPI for real-time data and 3-day forecasts, with location autocomplete via Axios and React Hooks for state management.</p>
+                    </section>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <section class="qr-generator">
+                        <h2>QR Generator App</h2>
+                        <p class="objective">Objective:</p>
+                        <p>A user-friendly application that allows users to easily generate QR codes for various types of data, including URLs and text.</p>
+                        <p class="description">Description:</p>
+                        <p>To provide a simple, intuitive platform for creating customizable QR codes, enabling instant generation, easy download, and sharing across devices while ensuring user privacy and security.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div id="internships-content" class="content">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <section class="electro-loco-shed">
+                        <h2>Electro Loco Shed</h2>
+                        <p class="exposure">Exposure:</p>
+                        <p>Learned about components and working of electric locomotives, including traction motors, pantograph, transformer, braking systems, and control mechanisms, during training at an Electric Loco Shed.</p>
+                        <p class="duration">Duration:</p>
+                        <p>2 Weeks</p>
+                    </section>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <section class="tessolve">
+                        <h2>Tessolve</h2>
+                        <p class="exposure">Exposure:</p>
+                        <p>Learned basic concepts of VLSI design and Verilog HDL, including fundamental digital circuit design and simple hardware description.</p>
+                        <p class="duration">Duration:</p>
+                        <p>1 Week</p>
+                    </section>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <section class="pantech">
+                        <h2>Pantech E-Solution</h2>
+                        <p class="exposure">Exposure:</p>
+                        <p>Gained foundational knowledge in embedded systems, including microcontroller programming and interfacing techniques.</p>
+                        <p class="duration">Duration:</p>
+                        <p>4 Weeks</p>
+                    </section>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <section class="salem-steel">
+                        <h2>Salem Steel Plant</h2>
+                        <p class="exposure">Exposure:</p>
+                        <p>Acquired practical experience in electrical maintenance, focusing on steel plant operations and equipment upkeep.</p>
+                        <p class="duration">Duration:</p>
+                        <p>1 Week</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showContent(contentId) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
+            document.querySelector(`[onclick="showContent('${contentId}')"]`).classList.add('active');
+            document.getElementById(contentId).classList.add('active');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
